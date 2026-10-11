@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #05070b;
+    color: #00ff66;
+    font-family: 'JetBrains Mono', 'Share Tech Mono', ui-monospace, monospace;
+    overflow: hidden;
+    user-select: none;
+  }
+}
+
+/* Custom Cyberpunk Terminal Text Glow Utilities */
+.glow-green {
+  text-shadow: 0 0 4px rgba(0, 255, 102, 0.7), 0 0 10px rgba(0, 255, 102, 0.4);
+}
+
+.glow-green-sm {
+  text-shadow: 0 0 2px rgba(0, 255, 102, 0.6);
+}
+
+.glow-cyan {
+  text-shadow: 0 0 4px rgba(0, 240, 255, 0.7), 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.glow-amber {
+  text-shadow: 0 0 4px rgba(255, 170, 0, 0.7), 0 0 10px rgba(255, 170, 0, 0.4);
+}
+
+.glow-danger {
+  text-shadow: 0 0 4px rgba(255, 42, 95, 0.7), 0 0 10px rgba(255, 42, 95, 0.4);
+}
+
+/* CRT Scanlines Overlay */
+.scanline-layer {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.4) 50%
+  ), 
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* CRT Vignette & Screen Curvature illusion */
+.crt-vignette {
+  background: radial-gradient(circle at center, transparent 65%, rgba(0, 0, 0, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Cyberpunk Corner Decors */
+.cyber-corner-box {
+  position: relative;
+  background: rgba(9, 13, 20, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.cyber-corner-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #00ff66;
+  border-left: 2px solid #00ff66;
+  pointer-events: none;
+}
+
+.cyber-corner-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #00ff66;
+  border-right: 2px solid #00ff66;
+  pointer-events: none;
+}
+
+/* Cyberpunk Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #143525;
+  border: 1px solid #00ff6633;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff6666;
+}
